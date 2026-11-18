@@ -190,9 +190,9 @@ export default function Home() {
             <p>{content.copy.homeClose}</p>
           </li>
           <li className="hedge-inner flex flex-col justify-between gap-4 p-4 md:col-span-5 md:p-5">
-            <p>
+            <div>
               <ContactSentence />
-            </p>
+            </div>
             <p>
               <Link href="/offerte" data-cta="offerte" className="btn btn-buxus">
                 Offerte aanvragen

@@ -48,7 +48,7 @@ export default async function ProjectPage({
             </Link>
           </p>
           <h1>{project.title}</h1>
-          <p className="mt-4 max-w-3xl">{project.caption}</p>
+          {project.specs ? null : <p className="mt-4 max-w-3xl">{project.caption}</p>}
           {project.specs ? (
             <ul className="mono mt-4 space-y-1 text-[0.95rem] text-inkt">
               {project.specs.map((spec) => (

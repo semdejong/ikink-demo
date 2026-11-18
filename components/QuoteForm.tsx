@@ -69,7 +69,7 @@ export default function QuoteForm({
           {works.map((work) => (
             <label key={work} className="check">
               <input type="checkbox" name="werk" value={work} />
-              <span>{work}</span>
+              <span>{work.replaceAll("/", "/\u200B")}</span>
             </label>
           ))}
         </div>
