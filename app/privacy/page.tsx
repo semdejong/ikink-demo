@@ -22,6 +22,9 @@ export default function PrivacyPage() {
             Op deze conceptsite staat een cookieloos meetscript van Sleads. Dat script zet geen cookies. Formulieren worden niet naar een server van deze site gestuurd: ze openen het mailprogramma op uw apparaat, gericht aan {content.company.email}.
           </p>
           <p>
+            De teksten, het adres, het telefoonnummer, het e-mailadres, KvK, btw en de foto’s zijn overgenomen van de openbare site van het bedrijf, om dit concept te vullen. Deze pagina is een toelichting bij het concept, geen privacyverklaring van het hoveniersbedrijf.
+          </p>
+          <p>
             Voor contact met het hoveniersbedrijf gebruikt u de gegevens op de contactpagina: {content.company.street}, {content.company.postalCode} {content.company.city}, telefoon{" "}
             <a href={content.company.phoneTel} data-cta="bellen" className="link">
               {content.company.phoneDisplay}

@@ -30,12 +30,24 @@ export default function Footer() {
           <div className="md:col-span-4">
             <ContactSentence />
             <p className="mt-4">
+              <Link href="/aanleg" className="link">
+                Aanleg
+              </Link>
+              <br />
+              <Link href="/onderhoud" className="link">
+                Onderhoud
+              </Link>
+              <br />
               <Link href="/werkzaamheden" className="link">
                 Alle werkzaamheden
               </Link>
               <br />
               <Link href="/projecten" className="link">
                 Projecten
+              </Link>
+              <br />
+              <Link href="/over" className="link">
+                Over het bedrijf
               </Link>
               <br />
               <Link href="/privacy" className="link">

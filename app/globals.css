@@ -114,6 +114,29 @@ summary:focus-visible {
   min-width: 0;
 }
 
+.path {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 44px;
+  min-width: 0;
+}
+
+.path > span {
+  flex: 0 1 auto;
+  max-width: 70%;
+  text-align: center;
+}
+
+.path::before,
+.path::after {
+  content: "";
+  height: 10px;
+  flex: 1;
+  background: var(--buxus);
+  border-radius: 6px;
+}
+
 .vak-label {
   font-family: var(--font-sometype), "Sometype Mono", ui-monospace, monospace;
   font-weight: 500;
@@ -268,9 +291,6 @@ main .grid > * {
   min-width: 0;
 }
 
-h1,
-h2,
-h3,
 p {
   overflow-wrap: break-word;
 }

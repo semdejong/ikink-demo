@@ -4,6 +4,21 @@ import PageMain from "@/components/PageMain";
 import Hedge from "@/components/Hedge";
 import SiteImage from "@/components/SiteImage";
 import ContactSentence from "@/components/ContactSentence";
+import Path from "@/components/Path";
+
+const workSpans = [
+  "md:col-span-7",
+  "md:col-span-5",
+  "md:col-span-4",
+  "md:col-span-8",
+  "md:col-span-6",
+  "md:col-span-6",
+  "md:col-span-5",
+  "md:col-span-7",
+  "md:col-span-8",
+  "md:col-span-4",
+  "md:col-span-12",
+];
 
 const sizes = "(min-width: 768px) 40vw, 100vw";
 
@@ -23,6 +38,7 @@ export default function Home() {
             <div className="rise p-5 md:p-8">
               <h1>{content.home.h1}</h1>
               <p className="mt-4 max-w-2xl text-[1.125rem]">{content.home.lede}</p>
+              <p className="max-w-2xl">{content.copy.homeMore}</p>
               <p className="mt-3 text-sm">
                 {company.street}, {company.postalCode} {company.city}
               </p>
@@ -132,7 +148,8 @@ export default function Home() {
         </div>
 
         <div className="order-8 md:order-none md:col-span-12">
-          <h2 className="mb-4">Projecten</h2>
+          <Path label="VIER PROJECTEN" />
+          <h2 className="sr-only">Projecten</h2>
         </div>
 
         <ProjectBed slug="lounge-terras" photoId="terras-07" span="md:col-span-7" order="order-9" />
@@ -141,9 +158,47 @@ export default function Home() {
         <ProjectBed slug="vorm-en-hagensnoei" photoId="hagen-02" span="md:col-span-7" order="order-12" />
       </div>
 
-      <div className="mt-8 max-w-3xl">
-        <ContactSentence />
-      </div>
+      <Path label="HET WERK" />
+      <Hedge beds>
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-12">
+          {content.works.map((work, index) => (
+            <li key={work.label} className={`hedge-inner p-4 md:p-5 ${workSpans[index]}`}>
+              <h3>
+                {work.label.includes("/") ? (
+                  <>
+                    {work.label.slice(0, work.label.indexOf("/") + 1)}
+                    <wbr />
+                    {work.label.slice(work.label.indexOf("/") + 1)}
+                  </>
+                ) : (
+                  work.label
+                )}
+              </h3>
+              <p className="mt-2 text-[1.0625rem]">{work.short}</p>
+              {work.href ? (
+                <p className="mt-3">
+                  <Link href={work.href} className="link">
+                    Verder
+                  </Link>
+                </p>
+              ) : null}
+            </li>
+          ))}
+          <li className="hedge-inner p-4 md:col-span-7 md:p-5">
+            <p>{content.copy.homeClose}</p>
+          </li>
+          <li className="hedge-inner flex flex-col justify-between gap-4 p-4 md:col-span-5 md:p-5">
+            <p>
+              <ContactSentence />
+            </p>
+            <p>
+              <Link href="/offerte" data-cta="offerte" className="btn btn-buxus">
+                Offerte aanvragen
+              </Link>
+            </p>
+          </li>
+        </ul>
+      </Hedge>
     </PageMain>
   );
 }

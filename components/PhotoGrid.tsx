@@ -31,6 +31,12 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
                 <span className="sr-only">
                   Vergroot foto {photoIndex + 1} van {photos.length}.
                 </span>
+                <span className="block p-3 text-[1.02rem]" aria-hidden="true">
+                  <span className="mono text-sm text-aarde">
+                    {String(photoIndex + 1).padStart(2, "0")}
+                  </span>
+                  <span className="mt-1 block">{photo.blik}</span>
+                </span>
               </button>
             </Hedge>
           </li>

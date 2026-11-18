@@ -4,6 +4,13 @@ import PageMain from "@/components/PageMain";
 import Hedge from "@/components/Hedge";
 import { content } from "@/content";
 
+const ways = [
+  { href: "/aanleg", label: "Aanleg", text: "Van ontwerp tot terras en beplanting." },
+  { href: "/onderhoud", label: "Onderhoud", text: "Snoeien, maaien, gazons en planten." },
+  { href: "/projecten", label: "Projecten", text: "Vier werken met de eigen foto’s." },
+  { href: "/contact", label: "Contact", text: "Bellen, mailen of een bericht opstellen." },
+];
+
 export const metadata: Metadata = {
   title: "Pagina niet gevonden",
   description: "Deze pagina staat niet op de conceptsite van Hoveniersbedrijf Felix Ikink.",
@@ -28,6 +35,18 @@ export default function NotFound() {
           </div>
         </div>
       </Hedge>
+      <ul className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {ways.map((way) => (
+          <li key={way.href}>
+            <Hedge>
+              <Link href={way.href} className="block p-4">
+                <span className="font-display text-2xl text-aarde">{way.label}</span>
+                <span className="mt-2 block">{way.text}</span>
+              </Link>
+            </Hedge>
+          </li>
+        ))}
+      </ul>
     </PageMain>
   );
 }

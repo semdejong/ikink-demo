@@ -5,6 +5,7 @@ import { content, getProject } from "@/content";
 import PageMain from "@/components/PageMain";
 import Hedge from "@/components/Hedge";
 import PhotoGrid from "@/components/PhotoGrid";
+import Path from "@/components/Path";
 
 export function generateStaticParams() {
   return content.projects.map((project) => ({ slug: project.slug }));
@@ -56,23 +57,58 @@ export default async function ProjectPage({
             </ul>
           ) : null}
           {project.note ? <p className="mt-4 max-w-3xl">{project.note}</p> : null}
+          <p className="mt-4 max-w-3xl">{project.lead}</p>
         </div>
       </Hedge>
-      <div className="mt-5">
-        <PhotoGrid photos={project.photos} />
+
+      <Path label={`${String(project.photos.length).padStart(2, "0")} FOTO’S`} />
+
+      <PhotoGrid photos={project.photos} />
+
+      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
+        <div className="md:col-span-4">
+          {previous ? (
+            <Hedge>
+              <Link href={`/projecten/${previous.slug}`} className="block h-full p-4">
+                <span className="mono text-sm text-aarde">Vorige</span>
+                <span className="mt-2 block font-display text-2xl text-aarde">{previous.title}</span>
+              </Link>
+            </Hedge>
+          ) : (
+            <Hedge>
+              <Link href="/projecten" className="block h-full p-4">
+                <span className="mono text-sm text-aarde">Overzicht</span>
+                <span className="mt-2 block font-display text-2xl text-aarde">Alle projecten</span>
+              </Link>
+            </Hedge>
+          )}
+        </div>
+        <div className="md:col-span-4">
+          <Hedge>
+            <Link href={project.relatedHref} className="block h-full p-4">
+              <span className="mono text-sm text-aarde">Bij dit werk</span>
+              <span className="mt-2 block font-display text-2xl text-aarde">{project.relatedLabel}</span>
+            </Link>
+          </Hedge>
+        </div>
+        <div className="md:col-span-4">
+          {next ? (
+            <Hedge>
+              <Link href={`/projecten/${next.slug}`} className="block h-full p-4">
+                <span className="mono text-sm text-aarde">Volgende</span>
+                <span className="mt-2 block font-display text-2xl text-aarde">{next.title}</span>
+              </Link>
+            </Hedge>
+          ) : (
+            <Hedge>
+              <Link href="/offerte" data-cta="offerte" className="block h-full p-4">
+                <span className="mono text-sm text-aarde">Verder</span>
+                <span className="mt-2 block font-display text-2xl text-aarde">Offerte aanvragen</span>
+              </Link>
+            </Hedge>
+          )}
+        </div>
       </div>
-      <nav className="mt-6 flex flex-wrap gap-4" aria-label="Andere projecten">
-        {previous ? (
-          <Link href={`/projecten/${previous.slug}`} className="btn btn-line">
-            Vorige: {previous.title}
-          </Link>
-        ) : null}
-        {next ? (
-          <Link href={`/projecten/${next.slug}`} className="btn btn-line">
-            Volgende: {next.title}
-          </Link>
-        ) : null}
-      </nav>
     </PageMain>
   );
 }
