@@ -12,13 +12,13 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
 
   return (
     <>
-      <ul className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {photos.map((photo, photoIndex) => (
-          <li key={photo.id}>
-            <Hedge>
+          <li key={photo.id} className="h-full">
+            <Hedge className="h-full">
               <button
                 type="button"
-                className="block w-full text-left"
+                className="flex h-full w-full flex-col text-left"
                 onClick={(event) => {
                   opener.current = event.currentTarget;
                   setIndex(photoIndex);
@@ -31,7 +31,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
                 <span className="sr-only">
                   Vergroot foto {photoIndex + 1} van {photos.length}.
                 </span>
-                <span className="block p-3 text-[1.02rem]" aria-hidden="true">
+                <span className="mt-auto block p-3 text-[1.02rem]" aria-hidden="true">
                   <span className="mono text-sm text-aarde">
                     {String(photoIndex + 1).padStart(2, "0")}
                   </span>

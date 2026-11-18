@@ -9,7 +9,7 @@ export default function ContactSentence() {
         {company.email}
       </a>{" "}
       of bel ons op{" "}
-      <a href={company.phoneTel} data-cta="bellen" className="link">
+      <a href={company.phoneTel} data-cta="bellen" className="link whitespace-nowrap">
         {company.phoneDisplay}
       </a>
       .

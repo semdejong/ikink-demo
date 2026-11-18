@@ -54,7 +54,7 @@ export default function AanlegPage() {
       <Path label="VAN ZANDBED TOT TERRAS" />
 
       <Hedge beds>
-        <ul className="grid grid-cols-1 items-start gap-3 md:grid-cols-12">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-12">
           {sequence.map((id, index) => {
             const photo = photoById(id);
             return (

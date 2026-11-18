@@ -33,8 +33,9 @@ export default function Home() {
   return (
     <PageMain>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
-        <div className="order-1 md:order-none md:col-span-8">
-          <Hedge grow>
+        <div className="slot order-1 md:order-none md:col-span-8">
+          <div className="slot-label hidden md:block" aria-hidden />
+          <Hedge grow className="h-full">
             <div className="rise p-5 md:p-8">
               <h1>{content.home.h1}</h1>
               <p className="mt-4 max-w-2xl text-[1.125rem]">{content.home.lede}</p>
@@ -54,10 +55,10 @@ export default function Home() {
           </Hedge>
         </div>
 
-        <div className="order-3 md:order-none md:col-span-4">
-          <p className="vak-label mb-2">VAK A · AANLEG</p>
-          <Hedge>
-            <Link href="/aanleg" className="block">
+        <div className="slot order-2 md:order-none md:col-span-4">
+          <p className="slot-label vak-label">VAK A · AANLEG</p>
+          <Hedge className="h-full">
+            <Link href="/aanleg" className="flex h-full flex-col">
               <SiteImage photo={terras} sizes={sizes} preload />
               <span className="block p-4">
                 <span className="font-display text-2xl text-aarde">Aanleg tuinen</span>
@@ -67,10 +68,10 @@ export default function Home() {
           </Hedge>
         </div>
 
-        <div className="order-4 md:order-none md:col-span-3">
-          <p className="vak-label mb-2">VAK B · ONDERHOUD</p>
-          <Hedge>
-            <Link href="/onderhoud" className="block">
+        <div className="slot order-4 md:order-none md:col-span-3">
+          <p className="slot-label vak-label">VAK B · ONDERHOUD</p>
+          <Hedge className="h-full">
+            <Link href="/onderhoud" className="flex h-full flex-col">
               <SiteImage photo={hagen} sizes="(min-width: 768px) 24vw, 100vw" />
               <span className="block p-4">
                 <span className="font-display text-2xl text-aarde">Onderhoud</span>
@@ -80,9 +81,10 @@ export default function Home() {
           </Hedge>
         </div>
 
-        <div className="order-2 md:order-none md:col-span-6">
-          <div className="rise relative flex h-full min-h-72 items-center justify-center">
-            <div className="absolute top-1/2 right-0 left-0 h-3 -translate-y-1/2 rounded-[8px] bg-buxus" aria-hidden />
+        <div className="slot order-3 md:order-none md:col-span-6">
+          <div className="slot-label hidden md:block" aria-hidden />
+          <div className="cross rise relative flex min-h-56 items-center justify-center md:min-h-0">
+            <div className="absolute top-1/2 right-0 left-0 h-3 -translate-y-1/2 rounded-[8px] bg-buxus md:-right-5 md:-left-5" aria-hidden />
             <div className="absolute top-0 bottom-0 left-1/2 w-3 -translate-x-1/2 rounded-[8px] bg-buxus" aria-hidden />
             <a
               href={company.phoneTel}
@@ -99,10 +101,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="order-5 md:order-none md:col-span-3">
-          <p className="vak-label mb-2">VAK C · RENOVATIE</p>
-          <Hedge>
-            <Link href="/renovatie" className="block">
+        <div className="slot order-5 md:order-none md:col-span-3">
+          <p className="slot-label vak-label">VAK C · RENOVATIE</p>
+          <Hedge className="h-full">
+            <Link href="/renovatie" className="flex h-full flex-col">
               <SiteImage photo={graaf} sizes="(min-width: 768px) 24vw, 100vw" />
               <span className="block p-4">
                 <span className="font-display text-2xl text-aarde">Renovatie</span>
@@ -112,10 +114,10 @@ export default function Home() {
           </Hedge>
         </div>
 
-        <div className="order-6 md:order-none md:col-span-5">
-          <p className="vak-label mb-2">VAK D · WATER EN GRENS</p>
-          <Hedge>
-            <Link href="/vijvers-en-schuttingen" className="block">
+        <div className="slot order-6 md:order-none md:col-span-5">
+          <p className="slot-label vak-label">VAK D · WATER EN GRENS</p>
+          <Hedge className="h-full">
+            <Link href="/vijvers-en-schuttingen" className="flex h-full flex-col">
               <SiteImage photo={hedera} sizes={sizes} />
               <span className="block p-4">
                 <span className="font-display text-2xl text-aarde">Vijvers en schuttingen</span>
@@ -125,22 +127,22 @@ export default function Home() {
           </Hedge>
         </div>
 
-        <div className="order-7 md:order-none md:col-span-7">
-          <p className="vak-label mb-2">VAK E · ADVIES</p>
-          <Hedge>
-            <div className="grid gap-0 md:grid-cols-5">
-              <div className="md:col-span-3 p-5">
+        <div className="slot order-7 md:order-none md:col-span-7">
+          <p className="slot-label vak-label">VAK E · ADVIES</p>
+          <Hedge className="h-full">
+            <div className="grid h-full md:grid-cols-5">
+              <div className="p-5 md:col-span-3">
                 <h2>Advies en materialen</h2>
                 <p className="mt-3">
                   Allround werkzaamheden van ontwerp tot aanleg, onderhoud en renovatie, advies en levering van materialen.
                 </p>
-                <p className="mt-4">
-                  <Link href="/werkzaamheden" className="link">
+                <p className="mt-3">
+                  <Link href="/werkzaamheden" className="link-row">
                     Alle werkzaamheden
                   </Link>
                 </p>
               </div>
-              <div className="md:col-span-2">
+              <div className="md:col-span-2 md:flex md:items-end">
                 <SiteImage photo={bus} sizes="(min-width: 768px) 28vw, 100vw" />
               </div>
             </div>
@@ -153,9 +155,9 @@ export default function Home() {
         </div>
 
         <ProjectBed slug="lounge-terras" photoId="terras-07" span="md:col-span-7" order="order-9" />
-        <ProjectBed slug="erfafscheidingen" photoId="erfafscheiding-02" span="md:col-span-5" order="order-10" />
-        <ProjectBed slug="natuurlijk-gebied" photoId="natuurlijk-08" span="md:col-span-5" order="order-11" />
-        <ProjectBed slug="vorm-en-hagensnoei" photoId="hagen-02" span="md:col-span-7" order="order-12" />
+        <ProjectBed slug="erfafscheidingen" photoId="erfafscheiding-03" span="md:col-span-5" order="order-10" />
+        <ProjectBed slug="natuurlijk-gebied" photoId="natuurlijk-03" span="md:col-span-5" order="order-11" />
+        <ProjectBed slug="vorm-en-hagensnoei" photoId="hagen-01" span="md:col-span-7" order="order-12" />
       </div>
 
       <Path label="HET WERK" />
@@ -177,7 +179,7 @@ export default function Home() {
               <p className="mt-2 text-[1.0625rem]">{work.short}</p>
               {work.href ? (
                 <p className="mt-3">
-                  <Link href={work.href} className="link">
+                  <Link href={work.href} className="link-row">
                     Verder
                   </Link>
                 </p>
@@ -218,14 +220,14 @@ function ProjectBed({
   if (!project) return null;
   const photo = photoById(photoId);
   return (
-    <div className={`${order} md:order-none ${span}`}>
-      <Hedge>
-        <Link href={`/projecten/${project.slug}`} className="block">
+    <div className={`${order} h-full md:order-none ${span}`}>
+      <Hedge className="h-full">
+        <Link href={`/projecten/${project.slug}`} className="flex h-full flex-col">
           <SiteImage photo={photo} sizes="(min-width: 768px) 50vw, 100vw" />
           <span className="block p-4">
             <span className="font-display text-2xl text-aarde">{project.title}</span>
             <span className="mt-2 block">{project.caption}</span>
-            {project.note ? <span className="mt-2 block">{project.note}</span> : null}
+            {project.cardLine ? <span className="mt-2 block">{project.cardLine}</span> : null}
             <span className="mono mt-3 block text-sm text-aarde">
               {project.photos.length} foto’s
             </span>

@@ -38,16 +38,18 @@ export default function RenovatiePage() {
 
       <Path label="HET GRONDWERK" />
 
-      <ol className="grid grid-cols-1 items-start gap-4 md:grid-cols-12 md:gap-5">
+      <ol className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-12 md:gap-5">
         {steps.map((id, index) => {
           const photo = photoById(id);
           const wide = index % 2 === 0 ? "md:col-span-7" : "md:col-span-5";
           return (
-            <li key={id} className={wide}>
+            <li key={id} className={`flex h-full flex-col ${wide}`}>
               <p className="mono mb-2 text-sm text-aarde">{String(index + 1).padStart(2, "0")}</p>
-              <Hedge>
-                <SiteImage photo={photo} sizes="(min-width: 768px) 48vw, 100vw" />
-                <p className="p-4 text-[1.0625rem]">{photo.blik}</p>
+              <Hedge className="h-full flex-1">
+                <div className="flex h-full flex-col">
+                  <SiteImage photo={photo} sizes="(min-width: 768px) 48vw, 100vw" />
+                  <p className="p-4 text-[1.0625rem]">{photo.blik}</p>
+                </div>
               </Hedge>
             </li>
           );

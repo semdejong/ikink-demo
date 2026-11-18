@@ -146,6 +146,24 @@ summary:focus-visible {
   line-height: 1.4;
 }
 
+.slot {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+}
+
+.slot-label {
+  min-height: 1.65rem;
+  margin-bottom: 0.45rem;
+}
+
+.slot > .hedge,
+.slot > .cross {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 .mono {
   font-family: var(--font-sometype), "Sometype Mono", ui-monospace, monospace;
   font-weight: 500;
@@ -228,6 +246,19 @@ summary:focus-visible {
 }
 
 .link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.link-row {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--aarde);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.link-row:hover {
   text-decoration-thickness: 2px;
 }
 

@@ -81,7 +81,7 @@ export default function ContactPage() {
             <div className="p-5">
               <h2>Liever bellen</h2>
               <p className="mt-3">
-                Het nummer staat ook in de balk onderaan op een klein scherm, en in het midden van de beginpagina.
+                Voor een korte vraag is bellen het snelst. Het nummer hoort bij Hoveniersbedrijf Felix Ikink in Winterswijk.
               </p>
               <p className="mt-4">
                 <a href={company.phoneTel} data-cta="bellen" className="btn btn-buxus">

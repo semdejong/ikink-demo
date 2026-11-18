@@ -29,31 +29,26 @@ export default function Footer() {
           </div>
           <div className="md:col-span-4">
             <ContactSentence />
-            <p className="mt-4">
-              <Link href="/aanleg" className="link">
+            <nav className="mt-4 flex flex-col" aria-label="Voettekst">
+              <Link href="/aanleg" className="link-row">
                 Aanleg
               </Link>
-              <br />
-              <Link href="/onderhoud" className="link">
+              <Link href="/onderhoud" className="link-row">
                 Onderhoud
               </Link>
-              <br />
-              <Link href="/werkzaamheden" className="link">
+              <Link href="/werkzaamheden" className="link-row">
                 Alle werkzaamheden
               </Link>
-              <br />
-              <Link href="/projecten" className="link">
+              <Link href="/projecten" className="link-row">
                 Projecten
               </Link>
-              <br />
-              <Link href="/over" className="link">
+              <Link href="/over" className="link-row">
                 Over het bedrijf
               </Link>
-              <br />
-              <Link href="/privacy" className="link">
+              <Link href="/privacy" className="link-row">
                 Privacy
               </Link>
-            </p>
+            </nav>
           </div>
           <div className="md:col-span-3">
             <Link href="/offerte" data-cta="offerte" className="btn btn-blad">

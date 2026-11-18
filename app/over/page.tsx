@@ -56,16 +56,20 @@ export default function OverPage() {
       </Hedge>
 
       <div className="mt-5 grid grid-cols-1 items-start gap-4 md:grid-cols-12 md:gap-5">
-        <div className="md:col-span-5">
-          <Hedge>
-            <SiteImage photo={parterre} sizes="(min-width: 768px) 40vw, 100vw" />
-            <p className="p-4 text-[1.0625rem]">{parterre.blik}</p>
+        <div className="h-full md:col-span-5">
+          <Hedge className="h-full">
+            <div className="flex h-full flex-col">
+              <SiteImage photo={parterre} sizes="(min-width: 768px) 40vw, 100vw" />
+              <p className="p-4 text-[1.0625rem]">{parterre.blik}</p>
+            </div>
           </Hedge>
         </div>
-        <div className="md:col-span-7">
-          <Hedge>
-            <SiteImage photo={hedge} sizes="(min-width: 768px) 55vw, 100vw" />
-            <p className="p-4 text-[1.0625rem]">{hedge.blik}</p>
+        <div className="h-full md:col-span-7">
+          <Hedge className="h-full">
+            <div className="flex h-full flex-col">
+              <SiteImage photo={hedge} sizes="(min-width: 768px) 55vw, 100vw" />
+              <p className="p-4 text-[1.0625rem]">{hedge.blik}</p>
+            </div>
           </Hedge>
         </div>
         <div className="md:col-span-12">

@@ -47,7 +47,7 @@ export default function OnderhoudPage() {
       <Path label="KNIPWIJZEN" />
 
       <Hedge beds>
-        <ul className="grid grid-cols-1 items-start gap-3 md:grid-cols-12">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-12">
           {knippen.map((id, index) => {
             const photo = photoById(id);
             return (

@@ -19,6 +19,7 @@ export type Project = {
   title: string;
   caption: string;
   note?: string;
+  cardLine?: string;
   lead: string;
   specs?: string[];
   relatedHref: string;
@@ -197,6 +198,7 @@ export const content = {
       caption:
         "Lounge terras ± 40 m². Materiaal betonsteen getrommeld Basolo Morano 22,5 × 15 × 8 cm. Kopsteen/opsluiting Redtumb Coal 20 × 30 cm.",
       note: "De foto’s lopen van zandbed tot terras.",
+      cardLine: "De foto’s lopen van zandbed tot terras.",
       lead: "De reeks begint bij het lossen van zand en eindigt bij de loungeset op het straatwerk. Daartussen liggen het zandbed, de stapels stenen en het leggen van de getrommelde betonstenen. Alleen bij dit project lopen de foto’s zo van begin tot eind.",
       relatedHref: "/aanleg",
       relatedLabel: "Aanleg van tuinen",
@@ -377,6 +379,7 @@ export const content = {
       caption:
         "Dit stuk grond wordt in ± 1 jaar helemaal ‘natuurlijk’ ingericht met een grote vijver, gras en beplanting.",
       note: "Een stuk grond dat natuurlijk wordt ingericht met een grote vijver, gras en beplanting; hier het graaf- en grondwerk. Een afgewerkte vijver staat niet op de foto’s.",
+      cardLine: "Hier het graaf- en grondwerk.",
       lead: "Eerst ligt er een gazon binnen een hoge haag. Daarna freest een trekker de grasmat om, vlakt een graafmachine het zand en ontstaat een kuil. Water staat er niet in. De eigen toelichting beschrijft het plan: in ongeveer een jaar een natuurlijke inrichting met een grote vijver, gras en beplanting.",
       relatedHref: "/renovatie",
       relatedLabel: "Tuinrenovatie",

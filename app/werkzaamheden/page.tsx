@@ -65,7 +65,7 @@ export default function WerkzaamhedenPage() {
                     <p className="mt-3">{work.text}</p>
                     {work.href ? (
                       <p className="mt-4">
-                        <Link href={work.href} className="link">
+                        <Link href={work.href} className="link-row">
                           Lees verder
                         </Link>
                       </p>

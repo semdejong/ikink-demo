@@ -45,7 +45,7 @@ export default function ProjectenPage() {
                       {project.title}
                     </span>
                     <span className="mt-3 block">{project.caption}</span>
-                    {project.note ? <span className="mt-3 block">{project.note}</span> : null}
+                    {project.cardLine ? <span className="mt-3 block">{project.cardLine}</span> : null}
                     <span className="mono mt-4 block text-sm text-aarde">{project.photos.length} foto’s</span>
                   </span>
                 </Link>
