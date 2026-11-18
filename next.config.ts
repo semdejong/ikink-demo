@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1600],
+    imageSizes: [256, 384, 512, 640],
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
   // Demo's: nooit indexeren, op elke route.
@@ -19,7 +21,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
-        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, nocache" }],
       },
     ];
   },
